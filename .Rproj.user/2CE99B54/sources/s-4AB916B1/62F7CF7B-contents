@@ -1,0 +1,69 @@
+inputs_sort <- function(movie_name_ui="Batman",
+                        imdb_id_ui = NA,
+                        yyyy_ui = NA,
+                        plot_ui = NA,
+                        api_key_ui = '123456'){
+  
+  
+  a00 = "http://www.omdbapi.com/?"  # first parse piece, hardcoded
+  
+  if (!is.na(movie_name_ui)){ 
+    a0 = str_replace_all(movie_name_ui, " ", "+")
+    a01 = paste0("s=", a0) 
+  } else {
+    a01 = paste0("i=", imdb_id_ui)
+  }
+  
+  a02 = NULL
+  if (!is.na(yyyy_ui)){ a02 = paste0("&y=", yyyy_ui)}
+  if (!is.na(plot_ui)){a02 = paste0("&plot=full")}
+  
+  a03 = paste0("&apikey=", api_key_ui)
+  
+  search_string = paste0(a00, a01, a02, a03)
+  
+  return(search_string) }
+
+
+
+# test-driving
+api_key_ui = 'b55f74d5'
+movie_name_ui="Harry Potter"
+imdb_id_ui = NA
+yyyy_ui = NA
+plot_ui = 'full'
+
+
+search_string0 = inputs_sort(movie_name_ui=movie_name_ui, imdb_id_ui=imdb_id_ui,yyyy_ui=yyyy_ui, plot_ui=plot_ui,api_key_ui=api_key_ui)
+
+search_string0
+
+
+omdb_func <- function(search_string){
+  
+  a = getURL(search_string0); a
+  x = jsonlite::fromJSON(a)
+  x1 = as.data.frame(x)
+  
+  return(x1) # display as HTML table. 
+  
+} # func ends
+
+system.time({
+  x1 = omdb_func(search_string0)
+})
+
+require(imager)
+
+disp_poster <- function(x1, k=1){
+  
+  p0 = x1$Search.Poster[k]; #p0
+  
+  download.file(p0, "p0.png", mode="wb") 
+  
+  load.image("p0.png") %>% plot()
+  
+}
+
+# test-drive
+disp_poster(x1, 3)
