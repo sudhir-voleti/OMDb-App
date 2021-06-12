@@ -10,7 +10,7 @@ The OMDb API is a RESTful web service to obtain movie information, all content a
 
 #### How to use this App
 
-- Go to [OMDb API sign-up](https://www.shorturl.at/shortener.php) page 
+- Go to [OMDb API sign-up](http://www.omdbapi.com/apikey.aspx) page 
 - Submit your details and you will get the API key in sometime
 - Once you have the API key, submit it from sidebar panel
 - Enter either movie name or IMDb id to fetch the dataset
