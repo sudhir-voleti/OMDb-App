@@ -1,4 +1,12 @@
 library(dplyr)
+
+# Install / Load relevant packages
+if(!"pacman" %in% installed.packages()[,"Package"]) install.packages("pacman")
+pacman::p_load(shiny,httr, RCurl, jsonlite, stringr,imager,markdown,DT,dplyr)
+#pacman::p_load(DT)
+
+
+
 shinyUI(fluidPage(
   
   title = "OMDb App",
