@@ -1,15 +1,16 @@
 library(dplyr)
 
 # Install / Load relevant packages
-if(!"shiny" %in% installed.packages()[,"Package"]) install.packages("shiny")
-if(!"httr" %in% installed.packages()[,"Package"]) install.packages("httr")
-if(!"RCurl" %in% installed.packages()[,"Package"]) install.packages("RCurl")
-if(!"jsonlite" %in% installed.packages()[,"Package"]) install.packages("jsonlite")
-if(!"stringr" %in% installed.packages()[,"Package"]) install.packages("stringr")
-if(!"imager" %in% installed.packages()[,"Package"]) install.packages("imager")
-if(!"DT" %in% installed.packages()[,"Package"]) install.packages("DT")
-if(!"dplyr" %in% installed.packages()[,"Package"]) install.packages("dplyr")
-#if(!"pacman" %in% installed.packages()[,"Package"]) install.packages("pacman")
+library("shiny")
+library("httr")
+library("RCurl")
+library("jsonlite")
+library("stringr")
+library("imager")
+library("DT")
+
+
+
 
 
 
