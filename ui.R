@@ -28,7 +28,7 @@ shinyUI(fluidPage(
                includeMarkdown("overview.md"),
                # https://www.youtube.com/watch?v=NltUIbf5B_E
                HTML('<iframe width="560" height="315" src="https://www.youtube.com/watch?v=NltUIbf5B_E" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>')
-)
+
       ),
       tabPanel("Result Table", value=1,
               h5("Search String"),
