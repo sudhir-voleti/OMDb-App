@@ -48,7 +48,7 @@ p('- Go to [OMDb API sign-up](http://www.omdbapi.com/apikey.aspx) page',br(),
 '- Enter either movie name or IMDb id to fetch the dataset'),
 
 
-p(i('Disclaimer: we are not storing any API key in background. Once the app is close you have to re-enter it next time.'))
+p('Disclaimer: we are not storing any API key in background. Once the app is close you have to re-enter it next time.')
 
 
       ),
