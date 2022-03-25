@@ -34,8 +34,24 @@ shinyUI(fluidPage(
     tabsetPanel(
       tabPanel("Overview", value=1, 
                includeMarkdown("overview.md"),
-               # https://www.youtube.com/watch?v=NltUIbf5B_E
-               HTML('<iframe width="560" height="315" src="https://www.youtube.com/watch?v=NltUIbf5B_E" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>')
+               h3('Overview'),
+
+              h3('OMDb (The Open Movie Database}'),
+
+p('The OMDb API is a RESTful web service to obtain movie information, 
+all content and images on the site are contributed and maintained by the users.'),
+      
+h3('How to use this App')
+p('
+- Go to [OMDb API sign-up](http://www.omdbapi.com/apikey.aspx) page 
+- Submit your details and you will get the API key in sometime
+- Once you have the API key, submit it from sidebar panel
+- Enter either movie name or IMDb id to fetch the dataset
+'),
+
+
+p(i('Disclaimer: we are not storing any API key in background. Once the app is close you have to re-enter it next time.'))
+
 
       ),
       tabPanel("Result Table", value=1,
